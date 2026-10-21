@@ -1,0 +1,260 @@
+{
+  "file": [
+    {
+      "id": 1,
+      "name": "Starter",
+      "ram": "128MB",
+      "disk": "512MB",
+      "cpu_limit": 10,
+      "days": 7,
+      "points": 50
+    },
+    {
+      "id": 2,
+      "name": "Basic",
+      "ram": "256MB",
+      "disk": "1GB",
+      "cpu_limit": 25,
+      "days": 7,
+      "points": 100
+    },
+    {
+      "id": 3,
+      "name": "Standard",
+      "ram": "512MB",
+      "disk": "1GB",
+      "cpu_limit": 50,
+      "days": 15,
+      "points": 200
+    },
+    {
+      "id": 4,
+      "name": "Plus",
+      "ram": "512MB",
+      "disk": "2GB",
+      "cpu_limit": 50,
+      "days": 30,
+      "points": 350
+    },
+    {
+      "id": 5,
+      "name": "Pro",
+      "ram": "1GB",
+      "disk": "3GB",
+      "cpu_limit": 80,
+      "days": 30,
+      "points": 500
+    },
+    {
+      "id": 6,
+      "name": "Business",
+      "ram": "1GB",
+      "disk": "5GB",
+      "cpu_limit": 80,
+      "days": 60,
+      "points": 800
+    },
+    {
+      "id": 7,
+      "name": "Enterprise",
+      "ram": "2GB",
+      "disk": "10GB",
+      "cpu_limit": 100,
+      "days": 60,
+      "points": 1200
+    },
+    {
+      "id": 8,
+      "name": "Premium",
+      "ram": "2GB",
+      "disk": "15GB",
+      "cpu_limit": 100,
+      "days": 90,
+      "points": 1500
+    },
+    {
+      "id": 9,
+      "name": "Ultra",
+      "ram": "4GB",
+      "disk": "20GB",
+      "cpu_limit": 100,
+      "days": 90,
+      "points": 2000
+    },
+    {
+      "id": 10,
+      "name": "Ultimate",
+      "ram": "4GB",
+      "disk": "50GB",
+      "cpu_limit": 100,
+      "days": 180,
+      "points": 3500
+    }
+  ],
+  "api": [
+    {
+      "id": 1,
+      "name": "Starter",
+      "max_apps": 1,
+      "max_ram_mb": 128,
+      "max_cpu": 0.1,
+      "days": 7,
+      "points": 50
+    },
+    {
+      "id": 2,
+      "name": "Basic",
+      "max_apps": 2,
+      "max_ram_mb": 256,
+      "max_cpu": 0.5,
+      "days": 7,
+      "points": 100
+    },
+    {
+      "id": 3,
+      "name": "Standard",
+      "max_apps": 3,
+      "max_ram_mb": 512,
+      "max_cpu": 0.5,
+      "days": 15,
+      "points": 200
+    },
+    {
+      "id": 4,
+      "name": "Plus",
+      "max_apps": 5,
+      "max_ram_mb": 512,
+      "max_cpu": 1.0,
+      "days": 30,
+      "points": 350
+    },
+    {
+      "id": 5,
+      "name": "Pro",
+      "max_apps": 5,
+      "max_ram_mb": 1024,
+      "max_cpu": 1.0,
+      "days": 30,
+      "points": 500
+    },
+    {
+      "id": 6,
+      "name": "Business",
+      "max_apps": 10,
+      "max_ram_mb": 1024,
+      "max_cpu": 1.5,
+      "days": 60,
+      "points": 800
+    },
+    {
+      "id": 7,
+      "name": "Enterprise",
+      "max_apps": 10,
+      "max_ram_mb": 2048,
+      "max_cpu": 2.0,
+      "days": 60,
+      "points": 1200
+    },
+    {
+      "id": 8,
+      "name": "Premium",
+      "max_apps": 20,
+      "max_ram_mb": 2048,
+      "max_cpu": 2.0,
+      "days": 90,
+      "points": 1500
+    },
+    {
+      "id": 9,
+      "name": "Ultra",
+      "max_apps": 30,
+      "max_ram_mb": 4096,
+      "max_cpu": 2.0,
+      "days": 90,
+      "points": 2000
+    },
+    {
+      "id": 10,
+      "name": "Ultimate",
+      "max_apps": 50,
+      "max_ram_mb": 4096,
+      "max_cpu": 2.0,
+      "days": 180,
+      "points": 3500
+    }
+  ],
+  "html": [
+    {
+      "id": 1,
+      "name": "Starter",
+      "max_sites": 1,
+      "days": 7,
+      "points": 50
+    },
+    {
+      "id": 2,
+      "name": "Basic",
+      "max_sites": 1,
+      "days": 7,
+      "points": 100
+    },
+    {
+      "id": 3,
+      "name": "Standard",
+      "max_sites": 2,
+      "days": 15,
+      "points": 200
+    },
+    {
+      "id": 4,
+      "name": "Plus",
+      "max_sites": 3,
+      "days": 30,
+      "points": 350
+    },
+    {
+      "id": 5,
+      "name": "Pro",
+      "max_sites": 5,
+      "days": 30,
+      "points": 500
+    },
+    {
+      "id": 6,
+      "name": "Business",
+      "max_sites": 5,
+      "days": 60,
+      "points": 800
+    },
+    {
+      "id": 7,
+      "name": "Enterprise",
+      "max_sites": 10,
+      "days": 60,
+      "points": 1200
+    },
+    {
+      "id": 8,
+      "name": "Premium",
+      "max_sites": 10,
+      "days": 90,
+      "points": 1500
+    },
+    {
+      "id": 9,
+      "name": "Ultra",
+      "max_sites": 20,
+      "days": 90,
+      "points": 2000
+    },
+    {
+      "id": 10,
+      "name": "Ultimate",
+      "max_sites": 50,
+      "days": 180,
+      "points": 3500
+    }
+  ],
+  "version": 1,
+  "updated_at": "2026-10-21 09:42:35"
+}
