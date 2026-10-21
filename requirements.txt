@@ -1,8 +1,0 @@
-Flask
-Authlib
-requests
-pyTelegramBotAPI
-python-dotenv
-gunicorn
-psutil
-boto3
