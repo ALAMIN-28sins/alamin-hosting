@@ -1,6 +1,0 @@
-{
-    "cpu_limit": 50,
-    "ram_mb": 256,
-    "disk_mb": 1000,
-    "expiry_hours": 3
-}
