@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAMIN HOSTING - Free Bot Hosting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #00c6ff; --secondary: #0072ff; --accent: #7b2ff7; --pink: #ff2e93; --bg-dark: #05060f; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg-dark); color: #fff; min-height: 100vh; overflow-x: hidden; position: relative; }
+        .bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: float 20s infinite ease-in-out; }
+        .orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, #00c6ff, transparent 70%); top: -100px; left: -100px; animation-delay: 0s; }
+        .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #7b2ff7, transparent 70%); bottom: -150px; right: -150px; animation-delay: -5s; }
+        .orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, #ff2e93, transparent 70%); top: 40%; left: 50%; animation-delay: -10s; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(50px, -50px) scale(1.1); } 66% { transform: translate(-50px, 50px) scale(0.9); } }
+        .grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 198, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 198, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; z-index: 1; pointer-events: none; mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); }
+        .container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin-bottom: 60px; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 1.3rem; font-weight: bold; }
+        .logo-icon { width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 8px 30px rgba(0, 198, 255, 0.4); }
+        .logo-text { background: linear-gradient(90deg, #fff, #00c6ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-actions { display: flex; gap: 12px; align-items: center; }
+        .nav-btn { padding: 10px 22px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: 1px solid transparent; }
+        .nav-btn-outline { color: #ccc; border-color: rgba(255, 255, 255, 0.15); }
+        .nav-btn-outline:hover { color: #fff; border-color: var(--primary); background: rgba(0, 198, 255, 0.05); }
+        .nav-btn-primary { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: #fff; box-shadow: 0 8px 25px rgba(0, 198, 255, 0.3); }
+        .nav-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(0, 198, 255, 0.5); }
+        .hero { text-align: center; margin-bottom: 80px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: rgba(0, 198, 255, 0.1); border: 1px solid rgba(0, 198, 255, 0.3); border-radius: 30px; font-size: 0.85rem; color: #00c6ff; margin-bottom: 25px; }
+        .hero-badge .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero h1 .gradient { background: linear-gradient(135deg, #00c6ff 0%, #7b2ff7 50%, #ff2e93 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 4s ease infinite; }
+        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); color: #999; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 38px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.35s; border: none; cursor: pointer; position: relative; overflow: hidden; }
+        .btn-google { background: #fff; color: #333; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2); }
+        .btn-google:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 20px 60px rgba(255, 255, 255, 0.4); }
+        .btn-outline { background: rgba(255, 255, 255, 0.03); color: #fff; border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--primary); transform: translateY(-4px); }
+        
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; margin-bottom: 80px; }
+        .feature { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 32px 26px; transition: all 0.4s; backdrop-filter: blur(10px); }
+        .feature:hover { transform: translateY(-8px); border-color: rgba(0, 198, 255, 0.3); background: rgba(0, 198, 255, 0.05); box-shadow: 0 20px 50px rgba(0, 198, 255, 0.15); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; background: linear-gradient(135deg, rgba(0, 198, 255, 0.15), rgba(123, 47, 247, 0.15)); border: 1px solid rgba(0, 198, 255, 0.2); }
+        .feature h3 { font-size: 1.15rem; margin-bottom: 10px; color: #fff; font-weight: 700; }
+        .feature p { color: #999; font-size: 0.9rem; line-height: 1.6; }
+        .footer { text-align: center; padding: 30px 0; color: #555; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 640px) { .container { padding: 30px 15px; } .navbar { flex-direction: column; gap: 15px; } .hero { margin-bottom: 50px; } .features { margin-bottom: 50px; } .btn { padding: 14px 30px; font-size: 0.95rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">🚀</div>
+                <div class="logo-text">ALAMIN <span style="color:#00c6ff">HOSTING</span></div>
+            </div>
+            <div class="nav-actions">
+                <a href="#features" class="nav-btn nav-btn-outline">Features</a>
+                <a href="/login" class="nav-btn nav-btn-primary"><i class="fas fa-sign-in-alt"></i> PAID LOGIN</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>সব server এখন Online</span>
+            </div>
+
+            <h1>
+                Host Your Bot <br>
+                <span class="gradient">24/7 Without Limits</span>
+            </h1>
+
+            <p>
+                Free, fast, and reliable Python bot hosting with real-time monitoring, auto-restart, and GitHub deployment — সবকিছু এক জায়গায়।
+            </p>
+
+            <!-- ✅ গুগল লগইন বাটন -->
+            <div class="hero-buttons">
+                <a href="/free-login" class="btn btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="20" height="20" alt="G">
+                    FREE LOGIN
+                </a>
+                <a href="#features" class="btn btn-outline">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Setup</h3>
+                <p>মাত্র কয়েক সেকেন্ডে আপনার bot deploy করুন — কোনো জটিলতা ছাড়াই।</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3>Auto Restart</h3>
+                <p>Crash হলে server নিজে থেকেই restart হবে — 24/7 online থাকবে।</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Live Stats</h3>
+                <p>CPU, RAM, Network — সব রিয়েল-টাইমে monitor করুন।</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🐙</div>
+                <h3>GitHub Deploy</h3>
+                <p>এক ক্লিকে GitHub থেকে সরাসরি deploy করুন।</p>
+            </div>
+        </section>
+
+        <div class="footer">
+            © 2026 <a href="/">ALAMIN HOSTING</a>. All rights reserved. Made with ❤️ for developers.
+        </div>
+    </div>
+</body>
+</html>
